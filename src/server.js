@@ -1,8 +1,8 @@
-// import dotenv from "dotenv";   
+// import dotenv from "dotenv";
 // dotenv.config();
-import 'dotenv/config'; // preload env vars before other imports
+import "dotenv/config"; // preload env vars before other imports
 
-import pool from "./config/db.js"; 
+import pool from "./config/db.js";
 import app from "./app.js";
 
 const PORT = process.env.PORT || 5000;
@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
   try {
     await pool.query("Select 1");
     console.log("database connected successfully");
-  } catch(error){
+  } catch (error) {
     console.log("databae connection failed", error);
     console.log(error.message);
     process.exit(1);

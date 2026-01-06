@@ -9,7 +9,7 @@ export async function findUserByEmail(email) {
 
   const { rows } = await pool.query(query, [email]);
   return rows[0] || null;
-};
+}
 
 //create new user
 export async function createNewUser({ email, passwordHash }) {
@@ -17,7 +17,7 @@ export async function createNewUser({ email, passwordHash }) {
                  VALUES ($1, $2)
                  RETURNING id, email, is_active
                  `;
-  
+
   const { rows } = await pool.query(query, [email, passwordHash]);
   return rows[0];
-};
+}
